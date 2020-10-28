@@ -1,0 +1,214 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Barlow', sans-serif;
+	background-color: black; 
+}
+
+header {
+	color: white;
+	margin-top: -20px;
+}
+
+.sidebar {
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+a {
+	color: white;
+}
+
+#select-file {
+	border-radius: 2px;
+	margin-left: -162px;
+	width: 160px;
+}
+
+#add-file {
+	/*margin-left: -45px;*/
+}
+
+.auth {
+	margin-top: 40px;
+}
+
+.header-line {
+	background-color: white;
+	height: 1px;
+	width: 100%;
+	margin-top: -15px;
+}
+
+#document {
+	background-color: silver;
+	height: 50px;
+	width: 700px;
+	margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.link {
+	color: black;
+	display: inline;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 660px;
+}
+
+.line {
+	position: absolute;
+	display: inline; 
+	background-color: white;
+	height: 50px;
+	width: 2px;
+	margin-left: 645px;
+}
+
+	
+#filename {
+	font-size: 20px;
+	word-wrap: break-word;
+	display: inline;
+	margin-left: 50px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.text {
+	margin-top: 10px;
+}
+
+.buttons {
+	display: none;							  
+	background-color: #CF3434;
+	height: 50px;
+	width: 700px;
+    margin-left: auto;
+    margin-right: auto;							  
+	border-radius: 5px;
+	margin-bottom: 11px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#test a {
+	text-decoration: none;
+	color: white;
+}
+
+#test {
+    /*margin-bottom: 10px;*/
+}
+
+.delete {
+	color: white;
+	margin-left: 30px;
+}
+
+.download { 
+	color: white;
+    margin-left: 200px;
+}
+
+.cancel {
+	color: white;
+	margin-left: 190px;
+}
+
+@media(max-width: 1008px) {
+	#document {
+		width: 500px;
+	}
+
+	.documents{
+		margin-top: 200px;
+	}
+
+	.link {
+		margin-left: 460px;
+	}
+
+	.line {
+		margin-left: 444px;
+	}
+
+	.buttons {
+		width: 500px;
+	}
+
+	.cancel {
+		margin: 0;
+		padding-left: 80px;
+		/*margin-left: 190px;*/
+	}
+
+	.download { 
+	    margin: 0;
+	    padding-left: 106px;
+	}
+
+	#file-count {
+		padding-left: 200px; 
+	}
+}
+
+@media(max-width: 598px) {
+	#document {
+		width: 320px;
+	}
+
+	.documents {
+		margin-top: 200px;
+	}
+
+	.link {
+		margin-left: 281px;
+	}
+
+	.text {
+		width: 200px;
+	}
+
+	/*.link {
+		margin: 0;
+	}*/
+
+	.line {
+		margin-left: 265px;
+	}
+
+	.buttons {
+		width: 320px;
+		font-size: 15px;
+	}
+
+	.cancel {
+		margin: 0;
+		padding-left: 13px;
+	}
+
+	.download { 
+	    margin: 0;
+	    padding-left: 15px;
+	}
+/*
+	.delete {
+		padding-left: -90px;
+	}*/
+
+	#file-count {
+		padding-left: 600px; 
+	}
+}
+
+
+
+

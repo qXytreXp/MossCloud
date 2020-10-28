@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;500&display=swap" rel="stylesheet">
+	<title>{{request.user.username}} storage</title>
+</head>
+<body>
+	<header>
+		<p style="font-size: 30px;margin-left: 20px;">Cloud Storage</p>
+	</header>
+	<div class="header-line"></div>
+	<div class="sidebar">
+		<div class="doc">
+			<div id="add-file">
+				<form id="form-select-file" action="{% url 'add_file' %}" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<input id="select-file" name="file" type="file">
+					<a class="add-file" style="color: white;">Add file</a><br>
+			    </form>
+			</div>
+		</div>
+        <div class="auth">
+			<a href="{% url 'login' %}" style="color: white;">Login</a><br>
+			<a href="{% url 'signin' %}" style="color: white;">Sign In</a><br>
+			<a href="{% url 'logout' %}" style="color: white;">Logout</a><br>
+		</div>
+	</div>
+	
+	<div class="documents">
+		<p id="username-storage" style="font-size: 35px;color: white;text-align: center;margin-top: 50px;">{{request.user.username}} storage</p>
+        {% if files %}
+            <p id="file-count" style="text-align: center; font-size: 15px;color: silver;margin-left: -610px;">File count: {{files|length}}</p>
+		    {% for file in files %}	
+			    <div>
+				    <div class="{{ file.document }}" id="document">
+				    	<div style="display: inline; position: absolute;margin-top: 8px;margin-left:10px;	background-color: white; height: 35px; width: 35px;border-radius: 50px;">
+				    		<p style="color: #167BB4;margin-left: 0.5px;margin-top: -1px;margin-top: 4px;text-align: center;">{{file.type_file}}</p>
+				        </div>
+				        <div class="line"></div>
+				    	<a class="link" data-qid="{{ file.document }}" style="">
+								<span id="cancel" style="font-size: 25px;color: white;">╳</span>
+						</a>
+						<div class="text">
+							<p id="filename" style="">
+								{{file.document}}
+							</p>
+						</div>
+					</div>
+				</div>
+					<div class="buttons" id="{{file.document}}" style="">
+						<h2 style="margin-top: -1px;padding-top: 10px;">
+							<a href="{% url 'delete' file.document %}" class="delete">Delete</a>
+							<a href="{% url 'download' file.document %}" class="download" style="text-align: center;">Download</a>
+							<a class="cancel" data-qid="{{file.document}}">Cancel</a>
+						</h2>
+
+					</div>
+				</div>
+		    {% endfor %}
+        {% else %}
+            <p style="font-size: 20px;color: white;text-align: center;margin-top: -10px;">Files not found</p>
+		{% endif %}    
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login in Moss</title>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+	<div class="login">
+		<p style="margin-left: 67px;font-size: 50px;margin-top: -100px;"><span id="m" style="color: white;">M</span><span id="o" style="color: white;">o</span><span id="s" style="color: white;">s</span><span id="s2" style="color: white;">s</span></p>
+		<p style="margin-left: 89px;font-size: 30px;">Login</p>
+		<form action="" method="post">
+			{% csrf_token %}
+			<input id="username" type="text" name="username" placeholder="username"><br>
+			<input id="password" type="password" name="password" placeholder="password"><br>
+			<button type="sumbit">Start</button>
+		</form>
+		<a href="{% url 'signin' %}">Sign In</a>
+		{% for error in errors %}
+			<p style="font-size: 10px;">{{error}}</p>
+		{% endfor %}
+	</div>
+	<script>
+		setTimeout(function() {
+  			document.getElementById('m').style.color = 'black';
+		}, 400);
+		
+		setTimeout(function() {
+  			document.getElementById('o').style.color = 'black';
+		}, 800);
+		setTimeout(function() {
+  			document.getElementById('s').style.color = 'black';
+		}, 1200);
+		setTimeout(function() {
+  			document.getElementById('s2').style.color = 'black';
+		}, 1600);
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Barlow', sans-serif;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.login {
+	/*position: absolute;
+	z-index: 3;
+	height: 235px;
+	width: 500px;
+	border-radius: 5px;           
+	top: 50%;
+	transform: translate(0, -50%);
+    left: 42%;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 235px;
+	width: 500px;
+    margin: -100px 0 0 -130px;
+}
+
+input {
+	outline: none;
+}
+
+#username {
+	border: 1.5px solid black;
+	border-radius: 3px;
+	width: 250px;
+	height: 20px;
+}
+
+#password {
+	border: 1.5px solid black;
+	margin-top: 10px;
+    border-radius: 3px;
+    width: 250px;
+    height: 20px;
+}
+
+button {
+	color: white;
+	margin-top: 10px;
+	border: none;
+	outline: none;
+	background-color: black;
+	border-radius: 3px;
+	width: 257px;
+	height: 25px;
+}
