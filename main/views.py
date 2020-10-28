@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from . import storageApi
 
 
-class MainView(View):
+class MainPageView(View):
     def get(self, request):
         if request.user.is_authenticated:
             json = storageApi.get_my_document(request.user.username)
