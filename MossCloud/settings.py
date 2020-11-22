@@ -127,3 +127,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+
+# Cloud Storage Api (add files, remove files, download files, view files)
+
+STORAGE_API_URL = 'http://127.0.0.1:8000'
+STORAGE_API_TOKEN = '43880072'
