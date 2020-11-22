@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect, reverse
 from django.views.generic import View
 from django.http import HttpResponseRedirect
 from . import storageApi
+from django.conf import settings
 
 
-class MainPageView(View):
+class MainView(View):
     def get(self, request):
         if request.user.is_authenticated:
             json = storageApi.get_my_document(request.user.username)
@@ -32,7 +33,7 @@ class DownloadDocumentView(View):
         if request.user.is_authenticated:
             username = request.user.username
             
-            return redirect('http://127.0.0.1:8000/api/main/download-doc/'+ username + '/43880072/' + filename)
+            return redirect(f'http://127.0.0.1:8000/api/main/download-doc/{username}/{settings.STORAGE_API_TOKEN}/{filename}')
         return redirect('login')
 
 
@@ -44,5 +45,8 @@ class AddDocumentView(View):
             storageApi.add_document(request.user.username, doc)
             return redirect('main')
         return redirect('login')
+
+        
+
 
         
