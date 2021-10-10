@@ -132,4 +132,4 @@ STATICFILES_DIRS = (
 # Cloud Storage Api (add files, remove files, download files, view files)
 
 STORAGE_API_URL = 'http://127.0.0.1:8000'
-STORAGE_API_TOKEN = '43880072'
+STORAGE_API_TOKEN = 'secret'
